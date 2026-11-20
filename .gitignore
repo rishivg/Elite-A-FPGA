@@ -1,0 +1,58 @@
+# Build output (all generated artifacts)
+/build/
+target/
+project/target/
+project/project/
+
+# Downloaded media and simulator states
+*.rom
+*.ssd
+*.dsd
+*.state
+
+# SpinalHDL / SpinalSim
+simWorkspace/
+*.anf
+tmp/
+
+# Scala / sbt / Metals / Bloop
+.bsp/
+.bloop/
+.metals/
+.scala-build/
+*.class
+
+# Verilator
+obj_dir/
+*.vcd
+*.fst
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local JavaScript development tools
+node_modules/
+
+# Formatter/linter caches
+.ruff_cache/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Local tool state and credentials
+.claude/
+.codex/
+.agents/
+.aws/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Local repository snapshots
+*.bundle

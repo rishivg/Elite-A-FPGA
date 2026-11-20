@@ -1,0 +1,18 @@
+{
+  "4abd5fa8576553ccb2cc61a136bbecee090c72d3": {
+    "rtl/bbc/BbcSoundBus.scala": "212ac51d669297fabea4117f5a289a7125a7df9ac515f05af473c490a04c3050",
+    "rtl/bbc/BbcSystemPins.scala": "7de6363a2122e010f8372755e860f610f6adb3746889b988f50013cb6e40e450",
+    "rtl/bbc/BbcVideo.scala": "48a2bbc2d23c3301f3b43544ef783e12082c2bcf8d98a22268de5fbb64309015",
+    "rtl/bbc/BbcVideoAddress.scala": "18c2a612e3c48c53503b56ebf39ddd5f695778ce65f5fb05bcff7e5b003652a4",
+    "rtl/bbc/Crtc6845.scala": "ef8a2989ed02136eebd63757a2558e4dcb2525df23350b03b433b27f2db930da",
+    "rtl/video/Saa5050Cell.scala": "5bf6651139070c29e2e37f880b4185a8e5b6b934308c6a04ffd24ba4a9e93c56",
+    "rtl/video/TeletextAttributes.scala": "e85831827a2ff2ae4bc56ae4f160e2f9d5cebb707904222166b76523f9136741",
+    "rtl/video/TeletextGlyphRow.scala": "2500ca386d060d3aba5e061da61157de61d670ecf51c91b18d68ecb6c8f15078"
+  },
+  "563d6a40ace8116d37a9e2e21a73c989ce0241de": {
+    "rtl/bbc/Via6522.scala": "4feb5286e035a58ddeb3358e6a57b3a74e2d01d55df2ba17bc2e6baa93d5826d"
+  },
+  "9936dbdcd92578e483b7cd130dd78ce9b26d29fe": {
+    "rtl/bbc/BbcVideo.scala": "05ab40a8636f47200c63ee0dee90c9fd5a80d4ab66b13b4d0498fed483818d6a"
+  }
+}

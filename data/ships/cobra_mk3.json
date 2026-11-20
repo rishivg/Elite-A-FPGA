@@ -1,0 +1,25 @@
+{
+  "name": "Cobra Mk III (placeholder hull)",
+  "comment": "Snapshot of the geometry baked into rtl/render/Renderer.scala (shipVerts + the ring-derived shipFaces). Live source of truth is the Scala literal at elaboration time; this JSON exists so the geometry is visible/diffable from outside the HDL, and as a future readmemh source if Renderer is ever refactored to load ROMs at runtime. tools/oracle/blueprint.py verifies JSON and HDL stay in sync.",
+  "scale": 1.0,
+  "vertices": [
+    [ 0.0,  0.0,  4.0],
+    [ 1.8,  0.0,  1.5],
+    [ 3.5,  0.0, -1.0],
+    [ 1.2,  0.0, -2.5],
+    [-1.2,  0.0, -2.5],
+    [-3.5,  0.0, -1.0],
+    [-1.8,  0.0,  1.5],
+    [ 0.0,  1.0, -0.3],
+    [ 0.0, -0.7, -0.3]
+  ],
+  "faces": [
+    [7, 0, 1], [8, 1, 0],
+    [7, 1, 2], [8, 2, 1],
+    [7, 2, 3], [8, 3, 2],
+    [7, 3, 4], [8, 4, 3],
+    [7, 4, 5], [8, 5, 4],
+    [7, 5, 6], [8, 6, 5],
+    [7, 6, 0], [8, 0, 6]
+  ]
+}

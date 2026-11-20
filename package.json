@@ -1,0 +1,7 @@
+{
+  "name": "elite-a-fpga-tooling",
+  "private": true,
+  "dependencies": {
+    "prettier": "3.6.2"
+  }
+}

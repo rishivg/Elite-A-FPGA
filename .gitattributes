@@ -1,0 +1,5 @@
+# Pinned upstream sources retain their original bytes, including whitespace.
+third_party/** -whitespace
+
+# Keep the historical CPU proof fixture byte-for-byte, including its license.
+sim/formal/BbcCpuColdBaseline.v whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
