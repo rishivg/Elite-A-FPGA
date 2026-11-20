@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "cpu_source": "floooh/chips 9e88298ce56319953ac7a43213a1120359f7a3a6",
+  "assets": {
+    "node_api.h": {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/src/node_api.h",
+      "sha256": "2d4560831e525b47b060ec8a0864ab73993df9e20215ce9f0fe7b24cd31af32a"
+    },
+    "node_api_types.h": {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/src/node_api_types.h",
+      "sha256": "a25356630d3058f0a0c8937d9f297e9471e037fda58c2696d8a505c2bd99cb00"
+    },
+    "js_native_api.h": {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/src/js_native_api.h",
+      "sha256": "8808ef8899a1691411928ef5dd7dae0537aedc93d3a34e223b2d89692e79c788"
+    },
+    "js_native_api_types.h": {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/src/js_native_api_types.h",
+      "sha256": "4f19cb90d240765cc0961d92a1ee20f65fdc50db7de1ab0a5cb6bc227224e1a0"
+    },
+    "NODE-LICENSE": {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/LICENSE",
+      "sha256": "148eacf7863ef4329224a29398623077200a27194aa075569faf4a0a85566ca5"
+    },
+    "m6502-original.h": {
+      "url": "https://raw.githubusercontent.com/floooh/chips/9e88298ce56319953ac7a43213a1120359f7a3a6/chips/m6502.h",
+      "sha256": "b3fc32a01f1f7cdc62f919ccba06cc20c2a333e7ca30c38189e31aa65868d46e"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+# ULX3S (Lattice ECP5) constraints — SCAFFOLD (nextpnr/Trellis .lpf format).
+# Fill in real pins for the 25 MHz clock and GPDI/HDMI. Reference:
+# https://github.com/emard/ulx3s/blob/master/doc/constraints/ulx3s_v20.lpf
+
+## 25 MHz oscillator
+# LOCATE COMP "clk25" SITE "G2";
+# IOBUF  PORT "clk25" IO_TYPE=LVCMOS33;
+# FREQUENCY PORT "clk25" 25 MHZ;
+
+## GPDI / HDMI differential pairs go here once HdmiTx.scala exists.

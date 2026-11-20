@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "target": "Elite-A released",
+  "machine": "B-DFS1.2",
+  "tube": false,
+  "cpu_hz": 2000000,
+  "dut_clock_hz": 4000000,
+  "sources": {
+    "jsbeeb": {
+      "repository": "mattgodbolt/jsbeeb",
+      "commit": "464a296aa13e837508375663a3f7764de13a1c08",
+      "archive_sha256": "27fe5c380bcaf637af6c04cf48d6c5aea141f6f69a8f2f1a6fc525356191f060"
+    },
+    "elite_a": {
+      "repository": "markmoxon/elite-a-source-code-bbc-micro",
+      "commit": "d3f554d51869766a5f1958d638929f3dfea287f4",
+      "archive_sha256": "c282ecf9e8d0578a6fa7761eca185e1a8ed39c35f92d80478946cd21e1e0380a"
+    }
+  },
+  "assets": {
+    "elite_a:5-compiled-game-discs/elite-a-released.ssd": "42e2b7f604c65ebe1a3c5c6e48638a005b4061d81321999d47274a418ef1ed44",
+    "jsbeeb:public/roms/os.rom": "2d9fea69017864f6962704481829f95fee08446c8c3a13826d5d4e44000ac9de",
+    "jsbeeb:public/roms/BASIC.ROM": "45bd55dc0f6f0f8f1fe9e2481de7def206565eec8f600ba3068b849ca4132079",
+    "jsbeeb:public/roms/b/DFS-1.2.rom": "e745e34895225a6650b712c1dd0656cb0b0b15f072a8ae6d9ea8d1ac257eb3d6",
+    "jsbeeb:package-lock.json": "1abfa42d565b6f35ef705bb1cd6c4a9346b6b5c8e4b4b08650ce802f121880cf"
+  },
+  "required_disc_files": 29
+}

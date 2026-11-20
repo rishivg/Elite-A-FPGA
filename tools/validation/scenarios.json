@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "time_unit": "microseconds since first playable screen",
+  "actions": {
+    "status": {
+      "keys": [
+        "F8"
+      ],
+      "input2": 16
+    },
+    "chart": {
+      "keys": [
+        "F4"
+      ],
+      "input": 33554432
+    },
+    "buy_cargo_screen": {
+      "keys": [
+        "F1"
+      ],
+      "input": 268435456
+    },
+    "quantity_one": {
+      "keys": [
+        "K1"
+      ]
+    },
+    "confirm_buy": {
+      "keys": [
+        "RETURN"
+      ],
+      "input": 536870912
+    },
+    "equip": {
+      "keys": [
+        "F3"
+      ],
+      "input": 2147483648
+    },
+    "shipyard": {
+      "keys": [
+        "CTRL",
+        "F3"
+      ],
+      "input2": 32
+    },
+    "launch": {
+      "keys": [
+        "F0"
+      ],
+      "unsupported": "DUT has no docked launch state"
+    },
+    "roll_right": {
+      "keys": [
+        "PERIOD"
+      ],
+      "input": 1
+    },
+    "pitch_up": {
+      "keys": [
+        "X"
+      ],
+      "input": 256
+    },
+    "throttle_up": {
+      "keys": [
+        "SPACE"
+      ],
+      "input": 65536
+    },
+    "fire": {
+      "keys": [
+        "A"
+      ],
+      "input": 16777216
+    },
+    "target_missile": {
+      "keys": [
+        "T"
+      ],
+      "unsupported": "DUT automatically acquires missiles; no separate arm control"
+    },
+    "missile": {
+      "keys": [
+        "M"
+      ],
+      "input2": 1
+    },
+    "ecm": {
+      "keys": [
+        "E"
+      ],
+      "unsupported": "DUT has no manual ECM input"
+    },
+    "hyperspace": {
+      "keys": [
+        "H"
+      ],
+      "input": 67108864
+    },
+    "dock_computer": {
+      "keys": [
+        "C"
+      ],
+      "input": 134217728
+    },
+    "save_menu": {
+      "keys": [
+        "AT"
+      ],
+      "unsupported": "DUT quick-save slot has no DFS commander menu"
+    }
+  },
+  "scenarios": [
+    {
+      "name": "initial-status",
+      "duration_us": 1000000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "status"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 900000,
+          "name": "status"
+        }
+      ],
+      "dut_assertions": [
+        {
+          "checkpoint": "status",
+          "field": "internal.status_mode",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "duration_us": 1000000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "chart"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 900000,
+          "name": "chart"
+        }
+      ],
+      "dut_assertions": [
+        {
+          "checkpoint": "chart",
+          "field": "internal.chart_mode",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "buy-cargo",
+      "duration_us": 1600000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "buy_cargo_screen"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        },
+        {
+          "at_us": 500000,
+          "actions": [
+            "quantity_one"
+          ]
+        },
+        {
+          "at_us": 600000,
+          "actions": []
+        },
+        {
+          "at_us": 800000,
+          "actions": [
+            "confirm_buy"
+          ]
+        },
+        {
+          "at_us": 950000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 450000,
+          "name": "market"
+        },
+        {
+          "at_us": 1500000,
+          "name": "purchased"
+        }
+      ],
+      "dut_assertions": [
+        {
+          "checkpoint": "market",
+          "field": "internal.market_mode",
+          "equals": 1
+        },
+        {
+          "checkpoint": "purchased",
+          "field": "cargo.0",
+          "equals": 1
+        }
+      ],
+      "reference_assertions": [
+        {
+          "checkpoint": "purchased",
+          "field": "cargo.1",
+          "equals": 1
+        }
+      ],
+      "notes": [
+        "Original initial market has no food, so the first quantity prompt buys textiles; DUT initially offers food. This world-state difference is compared explicitly."
+      ]
+    },
+    {
+      "name": "equipment",
+      "duration_us": 1000000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "equip"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 900000,
+          "name": "equipment"
+        }
+      ],
+      "dut_assertions": [
+        {
+          "checkpoint": "equipment",
+          "field": "internal.equip_mode",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "shipyard",
+      "duration_us": 1000000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "shipyard"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 900000,
+          "name": "shipyard"
+        }
+      ],
+      "dut_assertions": [
+        {
+          "checkpoint": "shipyard",
+          "field": "internal.shipyard_mode",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "name": "flight-combat",
+      "duration_us": 16000000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "launch"
+          ]
+        },
+        {
+          "at_us": 1100000,
+          "actions": []
+        },
+        {
+          "at_us": 9000000,
+          "actions": [
+            "roll_right",
+            "pitch_up",
+            "throttle_up",
+            "fire"
+          ]
+        },
+        {
+          "at_us": 10500000,
+          "actions": []
+        },
+        {
+          "at_us": 11500000,
+          "actions": [
+            "target_missile"
+          ]
+        },
+        {
+          "at_us": 12500000,
+          "actions": []
+        },
+        {
+          "at_us": 13500000,
+          "actions": [
+            "missile"
+          ]
+        },
+        {
+          "at_us": 14500000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 8000000,
+          "name": "launched"
+        },
+        {
+          "at_us": 10000000,
+          "name": "held"
+        },
+        {
+          "at_us": 15900000,
+          "name": "released"
+        }
+      ],
+      "reference_assertions": [
+        {
+          "checkpoint": "launched",
+          "field": "docked",
+          "equals": false
+        },
+        {
+          "checkpoint": "held",
+          "field": "docked",
+          "equals": false
+        },
+        {
+          "checkpoint": "released",
+          "field": "docked",
+          "equals": false
+        }
+      ],
+      "notes": [
+        "Hold launch through an original keyboard poll and wait for the original launch tunnel. Reference checkpoints must actually be in flight."
+      ]
+    },
+    {
+      "name": "navigation",
+      "duration_us": 2500000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "chart"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        },
+        {
+          "at_us": 900000,
+          "actions": [
+            "hyperspace"
+          ]
+        },
+        {
+          "at_us": 1050000,
+          "actions": []
+        },
+        {
+          "at_us": 1700000,
+          "actions": [
+            "dock_computer"
+          ]
+        },
+        {
+          "at_us": 1850000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 800000,
+          "name": "chart"
+        },
+        {
+          "at_us": 2400000,
+          "name": "navigation"
+        }
+      ],
+      "limitations": [
+        "No selected-destination or successful docking/hyperspace assertion yet"
+      ]
+    },
+    {
+      "name": "save-menu",
+      "duration_us": 1000000,
+      "events": [
+        {
+          "at_us": 100000,
+          "actions": [
+            "save_menu"
+          ]
+        },
+        {
+          "at_us": 250000,
+          "actions": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "at_us": 0,
+          "name": "initial"
+        },
+        {
+          "at_us": 900000,
+          "name": "save_menu"
+        }
+      ],
+      "limitations": [
+        "Commander bytes are captured; no filesystem write/load/reset/corruption coverage yet"
+      ]
+    }
+  ],
+  "coverage_gaps": {
+    "ships": "Released geometry exists for 38 ship names; orientation, transform, face and vertex translation/scaling/projection are independently tested and CPU-accessible; original blueprint/edge integration, clipping/raster rules and runtime-dependent corrupt Splinter geometry remain missing; gameplay uses seven simplified models",
+    "economy": "Boundary quantities, affordability, all commodities, equipment/hull transactions untested",
+    "combat": "Damage, deaths, kills, police/legal changes, ECM and escape outcomes untested",
+    "world": "All 8 galaxies, descriptions, galactic jumps and Elite-A missions untested",
+    "persistence": "Actual DFS writes, reload, reset persistence and corruption rejection untested",
+    "input_devices": "SoC inputs bypass physical keyboard/joystick adapter and debounce",
+    "display_output": "Separate RGB/sync/presentation integration is tested, but original native resolution, palette/HUD and display cadence differ; DUT is 128x128 monochrome",
+    "physical_fpga": "Playable board wrappers and ECP5 synthesis are available; peripheral pin constraints, routed board timing, TMDS and connected-board capture remain missing"
+  }
+}

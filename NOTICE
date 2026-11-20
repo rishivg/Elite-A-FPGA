@@ -1,0 +1,22 @@
+Elite-A-FPGA
+Copyright 2026 Elite-A-FPGA contributors
+
+Bundled code
+
+* Arlet Ottens' 6502 core is in third_party/6502/. The upstream
+  permission and copyright notice is in cpu.v. Provenance is in
+  third_party/6502/README.md.
+* Claire Xenia Wolf's PicoRV32 core is in third_party/picorv32.v
+  and carries its ISC license and copyright notice.
+* sim/formal/BbcCpuColdBaseline.v derives from Arlet Ottens' core
+  and retains its upstream notice.
+
+External inputs
+
+The preparation tools download reference implementations, the Elite-A
+disc and BBC ROMs into build/. Their pins are in
+tools/validation/reference.lock.json and tools/bbc/reference/lock.json.
+
+David Braben, Ian Bell and Angus Duggan created Elite and Elite-A.
+The original game, ROMs, extracted game data and artwork remain
+subject to their respective owners' terms.
